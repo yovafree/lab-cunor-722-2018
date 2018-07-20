@@ -1,0 +1,52 @@
+* Los productos con más ventas en un rango de tiempo
+
+SELECT COUNT(p.cod_producto) cantidad, p.nombre
+
+FROM factura f INNER JOIN det_factura df ON f.cod_factura = df.cod_factura 
+
+INNER JOIN producto p ON df.cod_producto = p.cod_producto
+
+WHERE f.fec_creacion BETWEEN '2018-01-01' and '2018-07-17'
+GROUP BY p.nombre
+
+
+* top 10 de los mejores compradores
+
+SELECT p.nombre_completo, SUM(df.cantidad * df.precio_unitario) AS total 
+
+FROM factura f INNER JOIN det_factura df ON f.cod_factura = df.cod_factura
+
+INNER JOIN persona p ON f.cod_persona = p.cod_persona
+
+GROUP BY p.nombre_completo
+
+ORDER BY total  DESC
+
+LIMIT 10
+
+* productos más baratos, más vendidos
+* las compras más altas registradas.
+
+SELECT p.nombre_completo, f.cod_factura, SUM(df.cantidad * df.precio_unitario) AS total 
+
+FROM factura f INNER JOIN det_factura df ON f.cod_factura = df.cod_factura
+
+INNER JOIN persona p ON f.cod_persona = p.cod_persona
+
+GROUP BY p.nombre_completo, f.cod_factura
+
+ORDER BY total  DESC
+
+LIMIT 10;
+
+* cantidad de compras realizadas de 10 productos.
+* cantidad de compras realizadas de 10 personas.
+* las compras realizadas de una persona con nombre juan.
+
+----------------------
+* Cantidad de compras realizadas según categorías.
+* Cantidad promedio de compras de productos diarias. 
+* Cantidad promedio de ventas diarias.
+* Clientes con mayor cantidad de productos adquiridos.
+* Clientes más constantes
+* Total de IVA de las compras
