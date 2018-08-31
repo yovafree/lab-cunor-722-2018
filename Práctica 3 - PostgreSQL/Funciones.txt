@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION public.crear_proveedor(integer)
+RETURNS bigint AS
+$BODY$
+DECLARE
+	r integer;
+	m   varchar[];
+	ran integer;
+	ran2 integer;
+	nombres varchar[] := array[['1','Juan'],['2','Carlos'],['3','Andréz'],['4','Pedro'],['5','Gerardo']];
+	apellidos varchar[] := array[['1','García'],['2','Amm'],['3','Sajché'],['4','Arquimedes'],['5','López']];
+BEGIN
+
+	FOR i IN 1 .. $1
+	   LOOP
+	   ran := floor(random()* (5-1 + 1) + 1);
+	   ran2 := floor(random()* (5-1 + 1) + 1);
+	   INSERT INTO public.proveedor(nit,nombre) VALUES(nombres[ran][2], apellidos[ran2][2]);
+	END LOOP;
+     r = 1;
+     
+     return r;
+END
+$BODY$
+LANGUAGE  plpgsql VOLATILE
+COST 100;

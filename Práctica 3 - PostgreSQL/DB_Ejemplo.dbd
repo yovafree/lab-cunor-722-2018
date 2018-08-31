@@ -1,0 +1,21 @@
+<XMLDiagram>
+  <TDBADiagramController Locked="0">
+    <Elements>
+      <TDBADiagramObject id="1" propertiesclass="TDiagramMetaTableProperties" objectname="dbo.cliente">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="10" top="10" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="2" propertiesclass="TDiagramMetaTableProperties" objectname="public.proveedor">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="270" top="10" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+    </Elements>
+    <Surface zoom="100" scrollx="0" scrolly="0"/>
+  </TDBADiagramController>
+</XMLDiagram>

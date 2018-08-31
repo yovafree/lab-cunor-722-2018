@@ -1,0 +1,47 @@
+
+
+CREATE DATABASE bd_inmuebles;
+
+CREATE USER 'app_inmueble'@'localhost' IDENTIFIED BY '12345678';
+CREATE USER 'app_inmueble'@'%' IDENTIFIED BY '12345678';
+GRANT ALL ON bd_inmuebles.* TO 'app_inmueble'@'localhost';
+GRANT ALL ON bd_inmuebles.* TO 'app_inmueble'@'%';
+
+
+GRANT ALL ON bd_inmuebles_pedro.* TO 'app_inmueble'@'localhost';
+GRANT ALL ON bd_inmuebles_pedro.* TO 'app_inmueble'@'%';
+
+GRANT ALL ON bd_inmuebles_gerardo.* TO 'app_inmueble'@'localhost';
+GRANT ALL ON bd_inmuebles_gerardo.* TO 'app_inmueble'@'%';
+
+WIFI
+manhattan123
+
+IP SERVIDOR
+192.168.43.98
+
+
+BD: bd_inmuebles_pedro
+Usuario: app_inmueble
+Contraseña: 12345678
+
+BD: bd_inmuebles_gerardo
+Usuario: app_inmueble
+Contraseña: 12345678
+
+propietario
+inmueble
+propietario_inmueble
+producto
+det_producto
+
+bd_inmueble
+	in_propietario
+
+bd_carros
+	car_propietario
+
+
+SELECT * FROM bd_inmueble.in_propietario AS p;
+
+
